@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   OLIVE MAKEUP — Design tokens
+   Paleta "Verde Oliva y Luxe Orgánico" definida en el brief de marca.
+   ========================================================================== */
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+
+  --color-olive-950: #1e241c; /* Carbono Suave — texto */
+  --color-olive-900: #2b3a28; /* Verde Oliva Profundo — fondo oscuro / header */
+  --color-olive-700: #3d5236; /* Verde Oliva Intenso — CTA */
+  --color-olive-500: #5b6e4e; /* Verde Oliva Vivo / Sabio — hover, bordes activos */
+  --color-olive-300: #a9b596; /* tono medio para bordes suaves */
+  --color-olive-200: #d0d8c8; /* Ley del Cierre — bordes de tarjetas */
+  --color-cream-100: #f7f6f0; /* Crema Calibrado — fondo superficie */
+  --color-cream-200: #efece1; /* Marfil Neutro */
+  --color-gold-500: #c5a059; /* Dorado Champaña — insignias */
+  --color-terracotta-500: #b5623f; /* validación / error, "rojo oliva" */
+
+  --shadow-card: 0 1px 2px rgba(30, 36, 28, 0.06), 0 8px 24px -12px rgba(30, 36, 28, 0.18);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-cream-100);
+    color: var(--color-olive-950);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background-color: var(--color-olive-500);
+    color: white;
+  }
+  /* Zona del pulgar: todo control táctil crítico cumple 48x48px mínimo (proxemia móvil). */
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  .touch-target {
+    min-height: 48px;
+    min-width: 48px;
+  }
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
